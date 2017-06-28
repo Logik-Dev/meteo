@@ -3,8 +3,8 @@ var unit = "celcius";
 
 function getCity(position) {
   console.log(position);
-  var lat = Math.round(position.coords.latitude, 2);
-  var lon = Math.round(position.coords.longitude, 2);
+  var lat = position.coords.latitude;
+  var lon = position.coords.longitude;
   $.get(
     "http://maps.googleapis.com/maps/api/geocode/json?latlng=" +
       lat +
@@ -34,7 +34,8 @@ function changeUnit() {
   }
 }
 function showCity(data) {
-  var city = data.results[0]["address_components"][1]["long_name"];
+  console.log(data);
+  var city = data.results[0]["address_components"][2]["long_name"];
   $("#city").text(city);
 }
 function showWeather(data) {
