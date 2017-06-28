@@ -6,14 +6,14 @@ function getCity(position) {
   var lat = position.coords.latitude;
   var lon = position.coords.longitude;
   $.get(
-    "http://maps.googleapis.com/maps/api/geocode/json?latlng=" +
+    "https://cors-anywhere.herokuapp.com/http://maps.googleapis.com/maps/api/geocode/json?latlng=" +
       lat +
       "," +
       lon,
     showCity
   );
   $.get(
-    "http://api.openweathermap.org/data/2.5/weather?units=metric&APPID=98e7eb2cd4bab5e4687cc52c0ff35a03&lang=fr&lat=" +
+    "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?units=metric&APPID=98e7eb2cd4bab5e4687cc52c0ff35a03&lang=fr&lat=" +
       lat +
       "&lon=" +
       lon,
